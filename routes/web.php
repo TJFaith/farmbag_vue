@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/product','productController@index');
 Route::get('/productCategory','productController@product_category');
 
-Route::get('{path}','indexController@index', function(){
+Route::get('/','indexController@index', function(){
     \Artisan::call('cache:clear');
     \Artisan::call('view:clear');
     \Artisan::call('config:clear');
