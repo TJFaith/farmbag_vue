@@ -1,20 +1,42 @@
 
 require('./bootstrap');
-import VueRouter from 'vue-router';
 window.Vue = require('vue');
-Vue.use(VueRouter);
 
-const routes=[
-    {path:'/', component:require('./components/homeComponent.vue').default}
-]
+import App from './components/App.vue';
+import VueRouter from 'vue-router';
+// import VueAxios from 'vue-axios';
+import axios from 'axios';
+import {routes} from './routes';
+
+Vue.use(VueRouter);
+// Vue.use(VueAxios, axios);
+
 const router = new VueRouter({
-    routes:routes,
-    mode:"history"
-})
+    mode: 'history',
+    routes: routes
+});
 
 const app = new Vue({
-    router
-}).$mount('#app')
+    el: '#app',
+    router: router,
+    render: h => h(App),
+});
+
+// import VueRouter from 'vue-router';
+// window.Vue = require('vue');
+// Vue.use(VueRouter);
+
+// const routes=[
+//     {path:'/', component:require('./components/homeComponent.vue').default}
+// ]
+// const router = new VueRouter({
+//     routes:routes,
+//     mode:"history"
+// })
+
+// const app = new Vue({
+//     router
+// }).$mount('#app')
 
 // Vue.component('example', require('./components/homeComponent.vue').default);
 

@@ -22,12 +22,14 @@
 </head>
 <body>
     
-   @include('layouts.navbar')
-  
+   {{-- @include('layouts.navbar') --}}
+  <div id="app">
     @yield('content')
+      
+  </div>
    
     @include('layouts.footer')
-    <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+    <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
     {{-- <script>alert('test');</script> --}}
 {{-- <script src="{{asset('js/bootstrap.js')}}" type="text/javascript"></script> --}}
 </body>
